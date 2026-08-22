@@ -10,10 +10,10 @@ Morrow needs PHP 8.4 or newer, Composer, Node.js, and Redis.
 git clone https://github.com/newdebugbar/benchmark.git
 cd benchmark
 composer setup
-php artisan serve
+valet link newdebugbar-benchmark
 ```
 
-Open the URL printed by Laravel and visit `/trips/kyoto-autumn`.
+Open `http://newdebugbar-benchmark.test/trips/kyoto-autumn`.
 
 No external service receives traffic. Outbound partner requests use reserved `.test` domains and Laravel's HTTP fake, mail uses the array transport, and all seeded data is fixed.
 
