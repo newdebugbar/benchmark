@@ -51,8 +51,13 @@
             "@php artisan dev"
         ],
         "test": [
+            "@test:php",
+            "@test:browser"
+        ],
+        "test:browser": "pest tests/Browser",
+        "test:php": [
             "@php artisan config:clear --ansi @no_additional_args",
-            "@php artisan test"
+            "@php artisan test --testsuite=Feature"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
