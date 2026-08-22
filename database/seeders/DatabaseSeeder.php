@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             'budget_cents' => 864000,
             'currency' => 'EUR',
             'hero_tone' => 'maple',
+            'refreshed_at' => '2026-08-22 14:08:00',
         ]);
 
         $days = collect([

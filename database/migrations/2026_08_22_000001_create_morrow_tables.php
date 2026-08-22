@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedInteger('budget_cents');
             $table->char('currency', 3)->default('EUR');
             $table->string('hero_tone')->default('moss');
+            $table->timestamp('refreshed_at')->nullable();
             $table->timestamps();
         });
 
