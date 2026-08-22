@@ -151,7 +151,7 @@
                             </div>
                             <div class="view-switcher" aria-label="Itinerary view">
                                 <button class="is-active" type="button">List</button>
-                                <button type="button">Map</button>
+                                <a href="{{ route('trips.map', $trip) }}">Map</a>
                             </div>
                         </div>
 

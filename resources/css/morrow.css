@@ -151,7 +151,7 @@ html[data-theme='dark'] .primary-button { color: #172019; }
 .itinerary-panel { padding: 25px 25px 15px; }
 .itinerary-heading { padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 .view-switcher { display: flex; padding: 3px; border-radius: 9px; background: var(--surface-soft); }
-.view-switcher button { height: 29px; padding: 0 13px; border: 0; border-radius: 7px; background: transparent; color: var(--ink-faint); font-size: 10px; font-weight: 600; cursor: pointer; }
+.view-switcher button, .view-switcher a { display: grid; height: 29px; padding: 0 13px; place-items: center; border: 0; border-radius: 7px; background: transparent; color: var(--ink-faint); font-size: 10px; font-weight: 600; cursor: pointer; }
 .view-switcher button.is-active { background: var(--surface-strong); color: var(--ink); box-shadow: 0 2px 8px rgb(40 46 41 / 8%); }
 .day-list { display: grid; }
 .day-card { display: grid; grid-template-columns: 52px 1fr; gap: 17px; padding: 22px 0; border-bottom: 1px solid var(--line); }
