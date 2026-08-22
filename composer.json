@@ -1,14 +1,16 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "newdebugbar/benchmark",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "A polished Laravel application that exercises every New Debug Bar capability.",
+    "keywords": ["laravel", "debugging", "newdebugbar"],
     "license": "MIT",
     "require": {
-        "php": "^8.3",
+        "php": "^8.4",
+        "inertiajs/inertia-laravel": "^3.3",
         "laravel/framework": "^13.17",
-        "laravel/tinker": "^3.0"
+        "laravel/tinker": "^3.0",
+        "livewire/livewire": "^4.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -16,8 +18,10 @@
         "laravel/pao": "^1.0.6",
         "laravel/pint": "^1.27",
         "mockery/mockery": "^1.6",
+        "newdebugbar/newdebugbar": "dev-main",
         "nunomaduro/collision": "^8.6",
         "pestphp/pest": "^5.1",
+        "pestphp/pest-plugin-browser": "^5.0",
         "pestphp/pest-plugin-drift": "^5.0",
         "pestphp/pest-plugin-laravel": "^5.0"
     },
