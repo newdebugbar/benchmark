@@ -8568,12 +8568,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newdebugbar/newdebugbar.git",
-                "reference": "aa6107f92439b0ed1bcd7282f0fba3fab6407e9a"
+                "reference": "a386db11a0c1cd0e5d554eb22ec51e05bcc6e3aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newdebugbar/newdebugbar/zipball/aa6107f92439b0ed1bcd7282f0fba3fab6407e9a",
-                "reference": "aa6107f92439b0ed1bcd7282f0fba3fab6407e9a",
+                "url": "https://api.github.com/repos/newdebugbar/newdebugbar/zipball/a386db11a0c1cd0e5d554eb22ec51e05bcc6e3aa",
+                "reference": "a386db11a0c1cd0e5d554eb22ec51e05bcc6e3aa",
                 "shasum": ""
             },
             "require": {
@@ -8617,7 +8617,7 @@
                 "issues": "https://github.com/newdebugbar/newdebugbar/issues",
                 "source": "https://github.com/newdebugbar/newdebugbar/tree/main"
             },
-            "time": "2026-08-22T11:59:36+00:00"
+            "time": "2026-08-22T13:12:41+00:00"
         },
         {
             "name": "nunomaduro/collision",
