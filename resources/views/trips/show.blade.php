@@ -225,6 +225,28 @@
 
                     <livewire:trip-review-panel :trip-id="$trip->id" />
 
+                    @env(['local', 'testing'])
+                        <section class="panel communication-scenarios" aria-labelledby="communication-scenarios-title" data-testid="communication-scenarios">
+                            <div class="section-heading compact">
+                                <div>
+                                    <p class="eyebrow">Debug scenarios</p>
+                                    <h2 id="communication-scenarios-title">Communication lifecycle</h2>
+                                </div>
+                            </div>
+                            <p>Queue real mail and notifications only when you need to inspect them.</p>
+                            <div class="view-switcher" aria-label="Communication lifecycle scenarios">
+                                <a href="{{ route('trips.debug.communications', [$trip, 'pending']) }}">Queue work</a>
+                                <a href="{{ route('trips.debug.communications', [$trip, 'after-response']) }}">After response</a>
+                            </div>
+                            @if ($communicationScenario ?? null)
+                                <p class="scenario-result" role="status">
+                                    <strong>{{ $communicationScenario['scenario'] === 'pending' ? 'Queued' : 'Scheduled' }}</strong>
+                                    {{ $communicationScenario['message'] }}
+                                </p>
+                            @endif
+                        </section>
+                    @endenv
+
                     <section class="panel activity-card">
                         <div class="section-heading compact">
                             <div>

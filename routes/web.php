@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommunicationCoverageController;
 use App\Http\Controllers\InviteTravelerController;
 use App\Http\Controllers\JourneyResponseController;
 use App\Http\Controllers\JourneySearchController;
@@ -12,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/trips/kyoto-autumn');
 
 Route::middleware([UseMorrowWorkspace::class, HandleInertiaRequests::class])->group(function (): void {
+    Route::get('/trips/{trip}/debug/communications/{scenario}', CommunicationCoverageController::class)
+        ->whereIn('scenario', ['pending', 'after-response'])
+        ->name('trips.debug.communications');
     Route::get('/trips/{trip}', TripWorkspaceController::class)->name('trips.show');
     Route::get('/trips/{trip}/map', TripMapController::class)->name('trips.map');
     Route::get('/trips/{trip}/search', JourneySearchController::class)->name('trips.search');

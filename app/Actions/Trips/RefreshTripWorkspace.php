@@ -4,7 +4,6 @@ namespace App\Actions\Trips;
 
 use App\Events\TripWorkspaceRefreshed;
 use App\Jobs\BuildJourneySnapshot;
-use App\Jobs\PublishJourneyBrief;
 use App\Jobs\SyncRailReservation;
 use App\Mail\JourneyReviewReady;
 use App\Models\Trip;
@@ -127,13 +126,6 @@ class RefreshTripWorkspace
 
     private function dispatchJourneyWork(Trip $trip): void
     {
-        DB::table('jobs')->where('queue', 'documents')->delete();
-
-        PublishJourneyBrief::dispatch($trip->id)
-            ->onConnection('database')
-            ->onQueue('documents')
-            ->delay(now()->addMinutes(5));
-
         Bus::dispatchSync(new BuildJourneySnapshot($trip->id));
 
         try {

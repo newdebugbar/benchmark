@@ -237,6 +237,13 @@ html[data-theme='dark'] .review-actions button { color: #172019; }
 .presence-row p { margin: 0; color: var(--ink-faint); font-size: 9px; }
 .presence-row p strong { color: var(--ink); }
 .text-button { border: 0; background: transparent; color: var(--rust); font-size: 9px; font-weight: 650; cursor: pointer; }
+.communication-scenarios { display: grid; gap: 12px; padding: 18px; }
+.communication-scenarios > p { margin: 0; color: var(--ink-faint); font-size: 11px; line-height: 1.55; }
+.communication-scenarios .view-switcher { width: fit-content; }
+.communication-scenarios .view-switcher a:hover,
+.communication-scenarios .view-switcher a:focus-visible { background: var(--surface-strong); color: var(--ink); box-shadow: 0 2px 8px rgb(40 46 41 / 8%); }
+.communication-scenarios .scenario-result { padding: 10px 12px; border-radius: 10px; background: var(--surface-soft); color: var(--ink); }
+.communication-scenarios .scenario-result strong { display: block; margin-bottom: 2px; color: var(--moss); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
 .activity-list { display: grid; gap: 14px; margin: 17px 0 0; padding: 0; list-style: none; }
 .activity-list li { display: flex; gap: 10px; }
 .activity-list li > span { display: grid; width: 27px; height: 27px; flex: none; place-items: center; border-radius: 8px; background: var(--surface-soft); color: var(--ink-soft); font-size: 8px; font-weight: 700; }
