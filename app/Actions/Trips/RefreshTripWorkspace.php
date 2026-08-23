@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use NewDebugBar\Debug;
 use NewDebugBar\ProfileManager;
@@ -145,6 +146,7 @@ class RefreshTripWorkspace
             ->send(new JourneyReviewReady($trip));
 
         $notification = new JourneyAttentionNeeded($trip);
+        $notification->id = (string) Str::uuid();
         $trip->owner->notify($notification);
         Event::dispatch(new NotificationFailed(
             $trip->owner,
