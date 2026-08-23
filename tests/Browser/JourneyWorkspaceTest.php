@@ -42,3 +42,39 @@ it('supports the interactive journey map', function (): void {
         ->assertNoJavaScriptErrors()
         ->assertNoBrokenImages();
 });
+
+it('shows pending communication lifecycle facts in adjacent inspector sections', function (): void {
+    visit('/trips/kyoto-autumn/debug/communications/pending')
+        ->on()->desktop()
+        ->assertSee('Five real database jobs are waiting for a worker.')
+        ->click('[data-ndb-window-controls="compact"] [data-ndb-window-action="expand"]')
+        ->click('[data-ndb-section="queue"]')
+        ->assertVisible('[data-ndb-section-panel="queue"]')
+        ->assertSee('JourneyReviewReady')
+        ->assertSee('JourneyReviewDeliveryProbe')
+        ->assertSee('Waiting for worker')
+        ->assertSee('Delayed')
+        ->click('[data-ndb-section="notifications"]')
+        ->assertVisible('[data-ndb-section-panel="notifications"]')
+        ->assertSee('JourneyReviewReminder')
+        ->assertSee('mail')
+        ->click('[data-ndb-section="mail"]')
+        ->assertVisible('[data-ndb-section-panel="mail"]')
+        ->assertSee('JourneyReviewDeliveryProbe')
+        ->assertNoJavaScriptErrors();
+});
+
+it('shows deferred work as after-response activity', function (): void {
+    visit('/trips/kyoto-autumn/debug/communications/after-response')
+        ->on()->desktop()
+        ->assertSee('Deferred and dispatch-after-response mail will run after this page is ready.')
+        ->click('[data-ndb-window-controls="compact"] [data-ndb-window-action="expand"]')
+        ->click('[data-ndb-section="queue"]')
+        ->assertVisible('[data-ndb-section-panel="queue"]')
+        ->assertSee('SendJourneyReviewAfterResponse')
+        ->assertSee('After response')
+        ->click('[data-ndb-section="mail"]')
+        ->assertVisible('[data-ndb-section-panel="mail"]')
+        ->assertSee('After response')
+        ->assertNoJavaScriptErrors();
+});
